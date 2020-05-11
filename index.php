@@ -1,4 +1,9 @@
 <?php
+require 'tracy/tracy.phar';
+use Tracy\Debugger;
+Debugger::enable();
+Debugger::$strictMode = true;
+
 $JakubPokorny1 = 1;
 $JakubPokorny2 = 5;
 if($JakubPokorny1 <=  $JakubPokorny2){
@@ -95,6 +100,57 @@ array('Výrobce' => 'Motorola',
         'Cena' => '7600Kč', 
         'Počet fot.' => 4 ),
       );
-var_dump($produkty);     
-var_dump($produkty1); 
- ?>
+dump($produkty);     
+dump($produkty1); 
+
+echo "<br><br>";
+
+$radekJakubPokorny=4; 
+$sloupecJakubPokorny=18; 
+    echo "<table border=1>";
+    for($i=1;$i<=$radekJakubPokorny;$i++) {
+    echo "<tr>";
+    for($x=1;$x<=$sloupecJakubPokorny;$x++){
+    echo "<td>".$i."-".$x."</td>";
+    }
+    echo "</tr>";
+    }
+    echo "</table><br>";
+
+    echo abs(396)."<br>";
+    echo cos(27)."<br>";
+    $string="Tohle je velký špatný";
+    echo strstr($string, "je")."<br>";
+    echo strpos($string, "je")."<br>";
+    echo sizeof($produkty);
+    array_splice($produkty, 0, 1, "UŽ to začíná"); 
+    dump($produkty);
+
+    $i=1;
+    foreach ($produkty as $produkt){
+    echo $i."-".$produkt."<br>";
+    $i++;
+    }
+    $jmena = "Alena, Petra,Jarmila;Hana Dominika-Tomaz Leona";
+    dump ($jmena);
+
+    $jmena = str_replace (" ", ",", $jmena);
+    dump($jmena);
+
+    $jmena = str_replace (",,", ",",$jmena);
+    dump($jmena);
+
+    $jmena = str_replace ("-", ",",$jmena);
+    dump($jmena);
+
+    $jmena = str_replace (";", ",", $jmena);
+    dump($jmena);
+
+    $jmena = strtolower($jmena);
+    dump($jmena);
+
+    $jmena = ucwords($jmena);
+    dump($jmena);
+
+    $jmena = explode(" ", $jmena);
+    dump($jmena);
